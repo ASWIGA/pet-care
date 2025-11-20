@@ -8,10 +8,14 @@ const app = express();
 
 // Middlewares
 app.use(express.json());
+
+// CORS Configuration - Allow all origins for now (update CLIENT_ORIGIN in production)
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "*",
+    origin: process.env.CLIENT_ORIGIN || true, // true allows all origins
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
   })
 );
 
