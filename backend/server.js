@@ -10,14 +10,14 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN, // Frontend URL (Render)
+    origin: process.env.CLIENT_ORIGIN || "*",
     credentials: true,
   })
 );
 
 // MongoDB Connection
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
