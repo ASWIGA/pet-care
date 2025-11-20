@@ -5,17 +5,31 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+
+// Middlewares
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }));
+app.use(
+  cors({
+    origin: process.env.CLIENT_ORIGIN, // Frontend URL (Render)
+    credentials: true,
+  })
+);
 
-// connect
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(()=>console.log("✅ MongoDB connected"))
-  .catch((err)=>console.error("❌ MongoDB error:", err));
+// MongoDB Connection
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("✅ MongoDB connected successfully"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// routes
-app.get("/", (_req, res) => res.send("Vedhas PetCare API 🚀"));
+// Default Route
+app.get("/", (_req, res) => {
+  res.send("Vedhas PetCare API 🚀");
+});
 
+// Routes
 const userRoutes = require("./routes/user.routes");
 app.use("/api/users", userRoutes);
 
@@ -31,6 +45,8 @@ app.use("/api/vet", vetRoutes);
 app.use("/api/pets", require("./routes/pet.routes"));
 app.use("/api/adoptions", require("./routes/adoption.routes"));
 
-// start
+// Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, ()=>console.log(`🚀 Server running on ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
