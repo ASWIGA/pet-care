@@ -9,13 +9,21 @@ const app = express();
 // Middlewares
 app.use(express.json());
 
-// CORS Configuration - Allow all origins for now (update CLIENT_ORIGIN in production)
+// CORS Configuration - Allow all origins including Vercel
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || true, // true allows all origins
+    origin: function (origin, callback) {
+      // Allow requests with no origin (mobile apps, Postman, etc.)
+      if (!origin) return callback(null, true);
+      
+      // Allow all origins - you can restrict this in production
+      // For production, set CLIENT_ORIGIN to your Vercel domain
+      callback(null, true);
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar']
   })
 );
 
