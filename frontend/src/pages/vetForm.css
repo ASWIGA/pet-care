@@ -1,0 +1,87 @@
+/* vetform.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.vet-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.vet-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  width: 400px;
+}
+
+.vet-form h2 {
+  text-align: center;
+  color: #5a2d82;
+  margin-bottom: 20px;
+}
+
+.vet-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #333;
+}
+
+.vet-form input,
+.vet-form textarea,
+.vet-form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.vet-form input:focus,
+.vet-form textarea:focus,
+.vet-form select:focus {
+  border-color: #5a2d82;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(90, 45, 130, 0.4);
+}
+
+.vet-form button {
+  width: 100%;
+  background: linear-gradient(135deg, #5a2d82, #c94fcf);
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.vet-form button:hover {
+  background: linear-gradient(135deg, #4a1f6f, #a93bab);
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}

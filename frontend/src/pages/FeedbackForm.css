@@ -1,0 +1,76 @@
+/* Container */
+.feedback-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eee7ec, #e0c3fc, #d1d5d6);
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Feedback Box */
+.feedback-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 1px solid #ccc;
+}
+
+/* Title */
+.feedback-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Form */
+.feedback-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #0f0f0f;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid #141415;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+  border-color: #7309b9;
+  box-shadow: 0 0 8px rgba(13, 11, 15, 0.3);
+}
+
+/* Button */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #4694a5, #3b82f6);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}

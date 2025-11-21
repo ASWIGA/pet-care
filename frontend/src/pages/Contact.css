@@ -1,0 +1,72 @@
+.contact-page {
+  padding: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #c99999, #78a7bf);
+  min-height: 100vh;
+}
+
+.contact-page h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.tagline {
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.contact-card {
+  background: #f3f3f3;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #0a0a0a;
+  cursor: pointer;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+  animation: shake 0.4s ease-in-out;
+}
+
+.contact-card h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.contact-card p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.contact-card p:hover {
+  color: #0077b6;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* 🔥 Shake Animation */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  20% { transform: translate(-1px, -2px) rotate(-1deg); }
+  40% { transform: translate(-3px, 0px) rotate(1deg); }
+  60% { transform: translate(3px, 2px) rotate(0deg); }
+  80% { transform: translate(1px, -1px) rotate(1deg); }
+  100% { transform: translate(-1px, 2px) rotate(-1deg); }
+}
